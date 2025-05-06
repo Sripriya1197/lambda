@@ -1,7 +1,7 @@
-FROM python
+FROM public.ecr.aws/lambda/python:3.9
 
 WORKDIR /app
 
-copy ./app
+COPY app.py .
 
-CMD ["python3","app.py"]
+CMD ["app.handler"]
