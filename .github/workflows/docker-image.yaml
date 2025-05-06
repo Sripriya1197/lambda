@@ -26,8 +26,7 @@ jobs:
      
       - name: Build Docker image
         run: |
-          docker build -t lambda .
-          working-directory: ./path-to-directory
+          docker build -t lambda -f ./Dockerfile .
 
       - name: Tag Docker image
         run: |
