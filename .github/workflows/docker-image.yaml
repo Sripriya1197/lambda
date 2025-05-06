@@ -24,11 +24,6 @@ jobs:
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | \
           docker login --username AWS --password-stdin ${{ secrets.REPOSITORY_URI }}
 
-      - name: List files in the directory
-        run: |
-          ls -al
-          ls -al lambda
-
       - name: Build Docker image
         run: |
           docker build -t lambda .
